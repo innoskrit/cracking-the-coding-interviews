@@ -3,16 +3,18 @@ class Solution:
         if x <= 1:
             return x
 
-        low, high = 1, x // 2
-        while low <= high:
-            mid = low + (high - low) // 2
-            sqrt = mid * mid
+        start = 1
+        end = x // 2
 
-            if sqrt == x:
+        while start <= end:
+            mid = start + (end - start) // 2
+            value = mid * mid
+
+            if value == x:
                 return mid
-            elif sqrt < x:
-                low = mid + 1
+            elif value < x:
+                start = mid + 1
             else:
-                high = mid - 1
+                end = mid - 1
 
-        return high
+        return end
